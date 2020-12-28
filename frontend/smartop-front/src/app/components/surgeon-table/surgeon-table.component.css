@@ -1,0 +1,54 @@
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}
+.name {
+  width: 11%;
+}
+.speciality {
+  width: 12%;
+}
+.interventionsNb {
+  width: 10%;
+}
+td.interventionsNb {
+  text-align: center;
+}
+.favoriteAnesthesist {
+  width: 10%;
+}
+.favoriteNurse {
+  width: 10%;
+}
+.mostFrequentedRoom {
+  width: 10%;
+}
+td.mostFrequentedRoom {
+  text-align: center;
+}
+
+.data-table {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.filter {
+  margin: 20px auto;
+  width: 25%;
+  margin-right: 65%;
+}
+
+.filter input {
+  border-radius: 0;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+}
+.filter input:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}

@@ -1,0 +1,118 @@
+<div class="filter">
+  <input
+    mat-input
+    class="form-control form-control-sm"
+    type="text"
+    (keyup)="applyFilter($event.target.value)"
+    placeholder="Rechercher un chirurgien"
+    #input
+  />
+</div>
+
+<div class="mat-elevation-z8 data-table">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    matSortActive="interventionsNb"
+    matSortDirection="desc"
+  >
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="name">
+        Nom
+      </th>
+      <td mat-cell *matCellDef="let row" class="name">{{ row.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="speciality">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="speciality">
+        Spécialité
+      </th>
+      <td mat-cell *matCellDef="let row" class="speciality">
+        {{ row.speciality }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="interventionsNb">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        class="interventionsNb"
+      >
+        Nombre d'interventions
+      </th>
+      <td mat-cell *matCellDef="let row" class="interventionsNb">
+        {{ row.interventionsNb }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="favoriteAnesthesist">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        class="favoriteAnesthesist"
+      >
+        Anesthésiste favori
+      </th>
+      <td mat-cell *matCellDef="let row" class="favoriteAnesthesist">
+        {{ row.favoriteAnesthesist }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="favoriteNurse">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        class="favoriteNurse"
+      >
+        Infirmière favorite
+      </th>
+      <td mat-cell *matCellDef="let row" class="favoriteNurse">
+        {{ row.favoriteNurse }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="mostFrequentedRoom">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        class="mostFrequentedRoom"
+      >
+        Salle la plus fréquente
+      </th>
+      <td mat-cell *matCellDef="let row" class="mostFrequentedRoom">
+        {{ row.mostFrequentedRoom }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="mostFrequentAct">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        class="mostFrequentAct"
+      >
+        Acte le plus fréquent
+      </th>
+      <td mat-cell *matCellDef="let row" class="mostFrequentAct">
+        {{ row.mostFrequentAct }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <!-- Row shown when there is no matching data.-->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">
+        Aucun chirurgien ne correspond à "{{ input.value }}"
+      </td>
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10]" showFirstLastButtons></mat-paginator>
+</div>

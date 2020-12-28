@@ -1,0 +1,12 @@
+.navbar-brand {
+  color: black;
+  margin-bottom: 10px;
+}
+nav {
+  height: 45px;
+  padding-bottom: 10px;
+  background-color: #69f0ae;
+}
+h4 {
+  color: rgb(87, 87, 87);
+}
